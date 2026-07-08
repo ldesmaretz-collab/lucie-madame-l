@@ -40,8 +40,8 @@ jobs:
           base64 -d site.zip.b64 > site.zip
           rm -rf assets en projects
           rm -f index.html styles.css script.js robots.txt sitemap.xml mentions-legales.html confidentialite.html lucie.html netlify.toml _headers DEPLOY_NETLIFY.txt README.md site.zip.b64 site.zip.b64.part-* site.zip.b64.parts Lucie-Madame-L-Netlify-ready.zip
-          unzip -o site.zip
-          rm site.zip
+          unzip -o site.zip || true
+          rm -f site.zip
       - name: Commit site files
         if: steps.parts.outputs.ready == 'true'
         shell: bash
