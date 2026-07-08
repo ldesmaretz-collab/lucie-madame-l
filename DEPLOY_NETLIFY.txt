@@ -1,0 +1,18 @@
+Projet : Lucie / Studio Madame-L
+
+Dossier pret pour une publication statique sur Netlify.
+Domaine public obligatoire : https://www.madame-l.studio/
+Email officiel : lucie@madame-l.studio
+
+Publication recommandee :
+1. Publier ce dossier via un depot GitHub dedie au site Madame-L.
+2. Dans Netlify, connecter le depot GitHub.
+3. Build command : laisser vide.
+4. Publish directory : .
+5. Domaine canonique prevu dans le SEO : https://www.madame-l.studio/
+6. Dans Netlify, ajouter le domaine personnalise www.madame-l.studio.
+
+Important :
+- Ce projet n'est pas lie a Mira Decor.
+- Ce dossier contient la derniere version retrouvee dans Studio LUNEA :
+  Studio-Madame-L-V2-sans-bandeau-partenaires-20260706-120354.zip
