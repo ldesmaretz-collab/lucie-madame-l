@@ -2213,6 +2213,8 @@ img {
   .v2-header {
     grid-template-columns: minmax(150px, 1fr) 48px;
     min-height: 78px;
+    z-index: 120;
+    overflow: visible;
     padding: 12px 16px;
     background: rgba(216, 210, 200, 0.96);
   }
@@ -2229,7 +2231,7 @@ img {
 
   .v2-menu-button {
     position: relative;
-    z-index: 80;
+    z-index: 140;
     display: inline-grid;
     place-content: center;
     width: 44px;
@@ -2244,14 +2246,13 @@ img {
   }
 
   .v2-nav {
-    z-index: 70;
     align-content: start;
     justify-items: stretch;
     gap: 0;
     padding: 96px 22px 30px;
     background:
-      radial-gradient(circle at 82% 10%, rgba(159, 122, 56, 0.16), transparent 28%),
-      var(--cream);
+      linear-gradient(145deg, rgba(243, 239, 233, 0.96), rgba(216, 210, 200, 0.97)),
+      radial-gradient(circle at 82% 10%, rgba(159, 122, 56, 0.16), transparent 28%);
     font-size: clamp(1.08rem, 5vw, 1.38rem);
   }
 
@@ -2816,6 +2817,176 @@ img {
 
   .v2-footer-nav {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .v2-header {
+    z-index: 120;
+    overflow: visible;
+  }
+
+  .v2-header.is-menu-open {
+    background: rgba(216, 210, 200, 0.98);
+    backdrop-filter: none;
+  }
+
+  .v2-menu-button {
+    position: relative;
+    z-index: 140;
+    cursor: pointer;
+  }
+
+  .v2-menu-button span {
+    transform-origin: center;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+
+  .v2-menu-button[aria-expanded="true"] {
+    border-color: rgba(159, 122, 56, 0.82);
+    background: rgba(243, 239, 233, 0.92);
+  }
+
+  .v2-menu-button[aria-expanded="true"] span:first-child {
+    transform: translateY(4.5px) rotate(42deg);
+  }
+
+  .v2-menu-button[aria-expanded="true"] span:last-child {
+    transform: translateY(-4.5px) rotate(-42deg);
+  }
+
+  .v2-nav {
+    inset: auto 12px auto 12px;
+    top: calc(100% + 10px);
+    z-index: 130;
+    align-content: start;
+    justify-items: stretch;
+    max-height: calc(100svh - 98px);
+    gap: 10px;
+    padding: 14px;
+    overflow-y: auto;
+    background:
+      linear-gradient(145deg, rgba(243, 239, 233, 0.96), rgba(216, 210, 200, 0.97)),
+      radial-gradient(circle at 82% 10%, rgba(159, 122, 56, 0.16), transparent 28%);
+    border: 1px solid rgba(5, 5, 5, 0.16);
+    box-shadow: 0 22px 70px rgba(5, 5, 5, 0.2);
+    font-size: clamp(1.08rem, 4vw, 1.38rem);
+    backdrop-filter: blur(18px);
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top right;
+  }
+
+  .v2-nav.is-open {
+    transform: translateY(0) scale(1);
+  }
+
+  .v2-nav a {
+    width: 100%;
+    min-height: 66px;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 9px 12px 9px 9px;
+    overflow: hidden;
+    white-space: normal;
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(5, 5, 5, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(5, 5, 5, 0.06);
+    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .v2-nav a::before,
+  .v2-nav a::after {
+    display: block;
+    content: "";
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    position: static;
+    inset: auto;
+    border: 1px solid rgba(255, 255, 255, 0.46);
+    border-radius: 8px;
+    background-color: rgba(5, 5, 5, 0.12);
+    background-image: var(--mobile-menu-image, linear-gradient(135deg, rgba(159, 122, 56, 0.34), rgba(5, 5, 5, 0.14)));
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    transform: none;
+  }
+
+  .v2-nav a::after {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    border: 0;
+    border-top: 2px solid rgba(5, 5, 5, 0.58);
+    border-right: 2px solid rgba(5, 5, 5, 0.58);
+    border-radius: 0;
+    background: none;
+    transform: rotate(45deg);
+  }
+
+  .v2-nav a[href="#top"] {
+    --mobile-menu-image: url("assets/site/final-home-balmain-chivas.jpg");
+  }
+
+  .v2-nav a[href="#approche"] {
+    --mobile-menu-image: url("assets/site/hero-experience.jpg");
+  }
+
+  .v2-nav a[href="#services"] {
+    --mobile-menu-image: url("assets/site/pillar-image-strategie.jpg");
+  }
+
+  .v2-nav a[href="#work"] {
+    --mobile-menu-image: url("assets/site/final-home-footlocker-adidas.jpg");
+  }
+
+  .v2-nav a[href="#story"] {
+    --mobile-menu-image: url("assets/site/lucie-ramon-photo.jpg");
+  }
+
+  .v2-nav a[href="#contact"] {
+    --mobile-menu-image: url("assets/site/final-home-aigle-rooftop.jpg");
+  }
+
+  .v2-nav a:hover,
+  .v2-nav a:focus-visible {
+    border-color: rgba(159, 122, 56, 0.48);
+    background: rgba(255, 255, 255, 0.54);
+    transform: translateY(-1px);
+  }
+
+  .v2-lang-link,
+  .v2-nav a[aria-label="English version"],
+  .v2-nav a[aria-label="Version francaise"],
+  .v2-nav a[aria-label="View this page in English"],
+  .v2-nav a[aria-label="Voir cette page en francais"] {
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+    justify-self: stretch;
+    justify-content: flex-start;
+    margin-top: 2px;
+    padding: 9px 12px 9px 9px;
+    border: 1px solid rgba(159, 122, 56, 0.42);
+  }
+
+  .v2-lang-link::before,
+  .v2-nav a[aria-label="English version"]::before,
+  .v2-nav a[aria-label="Version francaise"]::before,
+  .v2-nav a[aria-label="View this page in English"]::before,
+  .v2-nav a[aria-label="Voir cette page en francais"]::before {
+    background-image: linear-gradient(135deg, rgba(159, 122, 56, 0.72), rgba(5, 5, 5, 0.84));
+  }
+
+  .v2-contact-pill {
+    width: 100%;
+    height: auto;
+    margin-top: 2px;
+    font-size: 0.76rem;
+    border-color: var(--acid);
   }
 }
 

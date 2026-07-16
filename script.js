@@ -16,8 +16,16 @@ function syncHeader() {
 
 function closeMenu() {
   document.body.classList.remove("menu-open");
+  header?.classList.remove("is-menu-open");
   nav?.classList.remove("is-open");
   toggle?.setAttribute("aria-expanded", "false");
+}
+
+function openMenu() {
+  document.body.classList.add("menu-open");
+  header?.classList.add("is-menu-open");
+  nav?.classList.add("is-open");
+  toggle?.setAttribute("aria-expanded", "true");
 }
 
 syncHeader();
@@ -30,13 +38,20 @@ toggle?.addEventListener("click", () => {
     return;
   }
 
-  document.body.classList.add("menu-open");
-  nav?.classList.add("is-open");
-  toggle.setAttribute("aria-expanded", "true");
+  openMenu();
 });
 
 nav?.addEventListener("click", (event) => {
-  if (event.target instanceof HTMLAnchorElement) closeMenu();
+  const link = event.target instanceof Element ? event.target.closest("a") : null;
+  if (link) closeMenu();
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenu();
+});
+
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(min-width: 961px)").matches) closeMenu();
 });
 
 function moveCarousel(direction = 1) {
