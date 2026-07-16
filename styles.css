@@ -2856,6 +2856,7 @@ img {
   }
 
   .v2-nav {
+    position: absolute;
     inset: auto 12px auto 12px;
     top: calc(100% + 10px);
     z-index: 130;
