@@ -929,8 +929,11 @@ img {
 
 .v2-services {
   color: var(--ink);
-  background: transparent;
-  border-top: 0;
+  background:
+    linear-gradient(180deg, rgba(216, 210, 200, 0.94), rgba(228, 220, 204, 0.98)),
+    radial-gradient(circle at 12% 0%, rgba(159, 122, 56, 0.2), transparent 34%);
+  border-top: 1px solid rgba(159, 122, 56, 0.24);
+  border-bottom: 1px solid rgba(159, 122, 56, 0.18);
 }
 
 #faq.v2-services {
@@ -952,15 +955,15 @@ img {
   min-height: 390px;
   padding: 34px 30px;
   color: var(--ink);
-  background: rgba(216, 210, 200, 0.28);
-  border: 1px solid rgba(5, 5, 5, 0.14);
-  box-shadow: none;
+  background: rgba(243, 239, 233, 0.48);
+  border: 1px solid rgba(159, 122, 56, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
   transition: background 320ms ease, color 320ms ease;
 }
 
 .v2-service-list article:hover {
   color: var(--ink);
-  background: rgba(216, 210, 200, 0.42);
+  background: rgba(243, 239, 233, 0.7);
 }
 
 .v2-service-list span {
@@ -2591,8 +2594,11 @@ img {
 
   .v2-services {
     color: var(--ink);
-    background: transparent;
-    border-top: 0;
+    background:
+      linear-gradient(180deg, rgba(216, 210, 200, 0.94), rgba(228, 220, 204, 0.98)),
+      radial-gradient(circle at 12% 0%, rgba(159, 122, 56, 0.2), transparent 34%);
+    border-top: 1px solid rgba(159, 122, 56, 0.24);
+    border-bottom: 1px solid rgba(159, 122, 56, 0.18);
   }
 
   .v2-services .v2-section-copy {
@@ -2620,14 +2626,14 @@ img {
     min-height: 0;
     padding: 24px 22px 26px;
     color: var(--ink);
-    background: rgba(216, 210, 200, 0.28);
-    border: 1px solid rgba(5, 5, 5, 0.14);
-    box-shadow: 0 14px 34px rgba(5, 5, 5, 0.06);
+    background: rgba(243, 239, 233, 0.5);
+    border: 1px solid rgba(159, 122, 56, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
   }
 
   .v2-service-list article:hover {
     color: var(--ink);
-    background: rgba(216, 210, 200, 0.42);
+    background: rgba(243, 239, 233, 0.7);
   }
 
   .v2-service-list span {
