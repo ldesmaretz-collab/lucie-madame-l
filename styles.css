@@ -2548,14 +2548,35 @@ img {
     line-height: 1.45;
   }
 
+  .v2-services {
+    color: var(--ink);
+    background:
+      linear-gradient(180deg, rgba(216, 210, 200, 0.96), rgba(243, 239, 233, 0.98)),
+      radial-gradient(circle at 12% 0%, rgba(159, 122, 56, 0.16), transparent 34%);
+    border-top: 1px solid rgba(159, 122, 56, 0.22);
+  }
+
+  .v2-services .v2-section-copy {
+    color: rgba(5, 5, 5, 0.68);
+  }
+
   .v2-service-list {
-    border-left: 0;
+    gap: 12px;
+    border: 0;
   }
 
   .v2-service-list article {
     min-height: 0;
     padding: 24px 22px 26px;
-    border-right: 0;
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(5, 5, 5, 0.12);
+    box-shadow: 0 14px 34px rgba(5, 5, 5, 0.06);
+  }
+
+  .v2-service-list article:hover {
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.5);
   }
 
   .v2-service-list span {
@@ -2570,8 +2591,13 @@ img {
 
   .v2-service-list p {
     max-width: none;
+    color: rgba(5, 5, 5, 0.68);
     font-size: 0.98rem;
     line-height: 1.46;
+  }
+
+  .v2-service-list article:hover p {
+    color: rgba(5, 5, 5, 0.72);
   }
 
   .v2-story {
